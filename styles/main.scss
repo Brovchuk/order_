@@ -1,0 +1,151 @@
+$main-color: rgb(255, 255, 255);
+$search-border: rgba(255, 255, 255, 0.7);
+$placeholder-color: rgba(255, 255, 255, 0.5);
+
+html, body {
+	height: 100%;
+	overflow: hidden;
+	font-family: 'Lato', sans-serif;
+}
+.background {
+	background: url('../img/background.png') no-repeat center center;
+	background-size: cover;
+}
+.container {
+	width: 80%;
+	position: absolute;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	color: $main-color;
+	// display: none;
+	&-title {
+		margin-bottom: 4%;
+		font-size: 1.3em; 
+		padding-left: 3%;
+	}
+	&-form {
+		margin-bottom: 3%;
+		width: 100%;
+		height: 1.8em; 
+	}
+	&-input {
+		width: 95%;
+		color: white;
+		outline: none;
+		background: none; 
+		border: 2px solid $search-border; 
+		border-radius: 25px;
+		height: 100%; 
+		padding-left: 3%;
+		padding-right: 3%;  
+	}
+	&-alternative {
+		padding-left: 3%;
+		text-decoration: underline;
+		font-size: 0.7em 
+	}
+	&_block {
+		margin-top: 5%; 
+		opacity: 0;
+		transition: .5s ease;
+	}
+	&_list {
+		list-style: none;
+		overflow-y: auto;
+		height: 23em; 
+		&-li {
+			border: 0.5px solid white;
+			border-bottom: none;
+			font-size: 1.2em;
+			padding: 2%;
+			&:nth-last-child(1) {
+				border-bottom: 0.5px solid white;
+			} 
+		}
+		&-address {
+			font-size: 0.6em; 
+		}
+	}
+}
+.navigation {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: $main-color;
+	text-align: center;
+	display: none;
+	text-align: center;
+	width: 60%;
+	&-buttons {
+		border: 2px solid white;
+		margin-top: 10%;
+		padding: 2% 5%;
+		font-size: 2.3em;
+	}
+}
+.contacts {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	transform: translate(-50%, -50%);
+	color: $main-color;
+	font-size: 1.2em;
+	display: none;
+	&-phone {
+		margin-bottom: 3%;
+	}
+}
+.menu {
+	font-size: 1.5em;
+	color: $main-color;
+	width: 80%;
+	margin: 10% auto;
+	display: none;
+	&-item {
+		width: 90%;
+		margin-bottom: 5%;
+		border: 1px solid white;
+		padding: 3%; 
+		transition: .5s ease;
+		&-active {
+			background-color: green;
+			@extend .menu-item
+		}
+	}	 
+	&-descr {
+		font-size: 0.6em;
+	}
+}
+
+
+
+
+
+.navigation-back {
+		text-align: center;
+		border: 1px solid white;
+		width: 30%;
+		margin: 10% auto 0;
+		padding: 2% 5%;
+		cursor: pointer;
+		&--menu {
+			width: 40%; 
+			@extend .navigation-back;
+			font-size: 0.8em; 
+		}
+}
+::-webkit-input-placeholder {
+	color:$placeholder-color;
+}
+::-moz-placeholder          {
+	color:$placeholder-color;
+	}/* Firefox 19+ */
+:-moz-placeholder           {
+	color:$placeholder-color;
+	}/* Firefox 18- */
+:-ms-input-placeholder      {
+	color:$placeholder-color;
+}
